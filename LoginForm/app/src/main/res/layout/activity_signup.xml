@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/login_bg" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="248dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/txt"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="10sp"
+        android:drawableTint="@color/white"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="textPersonName"
+        android:padding="10sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="27sp"
+        android:background="@drawable/txt"
+        android:drawableLeft="@drawable/ic_baseline_security_24"
+        android:drawablePadding="10sp"
+        android:drawableTint="@color/white"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:padding="10sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="@drawable/txt"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="10sp"
+        android:drawableTint="@color/white"
+        android:ems="10"
+        android:layout_marginTop="27sp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="27sp"
+        android:background="@drawable/txt"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="10sp"
+        android:drawableTint="@color/white"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="10sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50sp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="57dp"
+            android:layout_height="63dp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/google" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="57dp"
+            android:layout_height="63dp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/wa" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="57dp"
+            android:layout_height="63dp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_email_24" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15sp"
+        android:text="or Sign Up with"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="51dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_login_24" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75sp"
+        android:layout_marginRight="20sp"
+        android:text="Login In"
+        android:textColor="#303B6B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:backgroundTint="#A69C9C"
+        android:text="Register"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
