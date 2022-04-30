@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TaskScheduler</string>
+    <string name="topic">Scheduling Task Using Handler - Runnable and CountDownTimer</string>
+</resources>
