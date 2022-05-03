@@ -6,11 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 public class DatabaseHelper extends SQLiteOpenHelper
 {
-    public static final String DATABASE_NAME = "mydb";
+    public static final String DATABASE_NAME = "login_db";
 
     public DatabaseHelper(Context context)
     {
@@ -20,13 +18,13 @@ public class DatabaseHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("CREATE TABLE registered (ID PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)");
+        db.execSQL("CREATE TABLE login_table (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1)
     {
-        db.execSQL("DROP TABLE IF EXISTS registered");
+        db.execSQL("DROP TABLE IF EXISTS login_table");
         onCreate(db);
     }
 
@@ -38,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
         cv.put("username",user);
         cv.put("password",pwd);
 
-        long result = db.insert("registered",null,cv);
+        long result = db.insert("login_table",null,cv);
 
         if(result == -1)
         {
@@ -53,9 +51,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
     public boolean check_uniqueness(String user)
     {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor c = db.rawQuery("SELECT * FROM registered WHERE username=?",new String[] {user});
+        Cursor c = db.rawQuery("SELECT * FROM login_table WHERE username=?",new String[] {user});
+
         if(c.getCount() > 0)
         {
             return false;
@@ -69,9 +68,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
     public boolean check_login(String user,String pwd)
     {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor c = db.rawQuery("SELECT * FROM registered WHERE username=? AND password=?",new String[] {user,pwd});
+        Cursor c = db.rawQuery("SELECT * FROM login_table WHERE username=? AND password=?",new String[] {user,pwd});
+
         if(c.getCount() > 0)
         {
             return true;

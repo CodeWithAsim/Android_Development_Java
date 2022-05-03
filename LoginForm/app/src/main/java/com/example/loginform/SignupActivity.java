@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
 
-    public static final String MSG = "com.example.loginform.insert" ;
-
     DatabaseHelper db ;
     EditText u;
     EditText e;
@@ -61,7 +59,7 @@ public class SignupActivity extends AppCompatActivity {
 
                 if(user.equals("")||email.equals("")||pwd.equals("")||confirm.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Credentials incomplete", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Credentials Incomplete", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -79,9 +77,10 @@ public class SignupActivity extends AppCompatActivity {
                                 p.setText("");
                                 cp.setText("");
 
-                                //Intent i = new Intent(SignupActivity.this,WelcomeActivity.class);
-                                //i.putExtra(MSG,user);
-                                //startActivity(i);
+                                Intent i = new Intent(SignupActivity.this,WelcomeActivity.class);
+                                i.putExtra("name",user);
+                                startActivity(i);
+
                             }
                             else
                             {

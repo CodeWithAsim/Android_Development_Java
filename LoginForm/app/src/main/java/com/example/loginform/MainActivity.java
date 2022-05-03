@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(user.equals("")||pwd.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Credentials incomplete", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Credentials Incomplete", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -45,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
                     if(check)
                     {
                         Intent i = new Intent(MainActivity.this,WelcomeActivity.class);
+                        i.putExtra("name",user);
                         startActivity(i);
                     }
                     else
                     {
-                        Toast.makeText(getApplicationContext(), "Incorrect Password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Incorrect Credentials", Toast.LENGTH_SHORT).show();
                     }
 
                 }

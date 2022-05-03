@@ -17,11 +17,9 @@ public class WelcomeActivity extends AppCompatActivity {
         TextView t = findViewById(R.id.textView10);
 
         Intent i = getIntent();
-        String n = i.getStringExtra(SignupActivity.MSG);
+        String n = i.getStringExtra("name");
 
-        t.setText(n);
-
-
+        t.append(n);
 
     }
 }
