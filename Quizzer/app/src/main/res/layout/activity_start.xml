@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@color/primary"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".start">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/bulb"></ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Online Quiz App"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/secondary"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Have fun and play"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/temprary"
+        android:textSize="14sp"></TextView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Start Quiz"
+        android:id="@+id/start"
+        android:textColor="@color/primary"
+        android:background="@drawable/btn_bg"
+        android:layout_marginTop="100dp"></androidx.appcompat.widget.AppCompatButton>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Exit"
+        android:id="@+id/exit"
+        android:textColor="@color/primary"
+        android:background="@drawable/btn_bg"
+        android:layout_marginTop="10dp"></androidx.appcompat.widget.AppCompatButton>
+
+
+</LinearLayout>

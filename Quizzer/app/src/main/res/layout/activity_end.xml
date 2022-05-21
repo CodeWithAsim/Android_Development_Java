@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical"
+    tools:context=".end">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Quiz Result"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:letterSpacing=".1"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/victory"></ImageView>
+
+<!--            android:adjustViewBounds="true"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Congratulations"
+            android:textSize="25dp"
+            android:letterSpacing=".2"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have completed the quiz successfully"
+            android:gravity="center"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp"
+            android:textSize="16sp"
+            android:letterSpacing=".1"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/temprary"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="#80FFFFFF"
+            android:text="YOUR SCORE"
+            android:letterSpacing=".2"
+            ></TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/ach_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:text="0"></TextView>
+
+            <TextView
+                android:id="@+id/tot_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text=" / 10"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            android:weightSum="2"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="CORRECT"
+                    android:textColor="@color/temprary"
+                    android:letterSpacing=".1">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/correct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/holo_green_light"
+                    android:letterSpacing=".1">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="INCORRECT"
+                    android:textColor="@color/temprary"
+                    android:letterSpacing=".1">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/incorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/holo_red_light"
+                    android:letterSpacing=".1">
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="35dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/share_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Share Result"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:background="@drawable/share_btn"
+                android:layout_marginRight="10dp"></androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/restart_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Restart Quiz"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:background="@drawable/restart_btn"
+                android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
