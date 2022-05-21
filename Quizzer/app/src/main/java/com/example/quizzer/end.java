@@ -1,5 +1,6 @@
 package com.example.quizzer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -7,6 +8,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +43,21 @@ public class end extends AppCompatActivity {
 
         correct.setText(getCorrectAnswers()+"");
         incorrect.setText(String.valueOf(questionsLists.size()-getCorrectAnswers()));
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        interstitialAd.show(end.this);
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        Toast.makeText(end.this, "Failed to load Ad", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         restart.setOnClickListener(new View.OnClickListener() {
             @Override

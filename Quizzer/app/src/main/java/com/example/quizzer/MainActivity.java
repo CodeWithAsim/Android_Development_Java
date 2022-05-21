@@ -17,6 +17,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -78,6 +82,22 @@ public class MainActivity extends AppCompatActivity
         C4=findViewById(R.id.C4);
 
         final AppCompatButton next_q = findViewById(R.id.next_q);
+
+//        It should not be here because its Quiz Time
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//
+//        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+//                new InterstitialAdLoadCallback() {
+//                    @Override
+//                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+//                        interstitialAd.show(MainActivity.this);
+//                    }
+//
+//                    @Override
+//                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+//                        Toast.makeText(MainActivity.this, "Failed to load Ad", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
         InstructionsDialog instDlg = new InstructionsDialog(MainActivity.this);
         instDlg.setCancelable(false);
