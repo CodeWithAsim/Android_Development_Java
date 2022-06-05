@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android_Studio_Projects/CustomToasts/app/src/main/res/drawable/ic_baseline_verified_24.xml" value="0.1" />
+        <entry key="..\:/Android_Studio_Projects/CustomToasts/app/src/main/res/layout-land/activity_welcome.xml" value="0.1728395061728395" />
         <entry key="..\:/Android_Studio_Projects/CustomToasts/app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="..\:/Android_Studio_Projects/CustomToasts/app/src/main/res/layout/activity_quiz.xml" value="0.17074275362318841" />
-        <entry key="..\:/Android_Studio_Projects/CustomToasts/app/src/main/res/layout/activity_welcome.xml" value="0.19" />
+        <entry key="..\:/Android_Studio_Projects/CustomToasts/app/src/main/res/layout/activity_welcome.xml" value="0.1814814814814815" />
         <entry key="..\:/Android_Studio_Projects/CustomToasts/app/src/main/res/layout/result.xml" value="0.1" />
       </map>
     </option>
