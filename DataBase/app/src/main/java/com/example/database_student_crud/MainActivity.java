@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 age.onEditorAction(EditorInfo.IME_ACTION_DONE);
-                
+
                 _name = name.getText().toString();
                 _age = Integer.parseInt(age.getText().toString());
                 _imageId = R.drawable.photo;

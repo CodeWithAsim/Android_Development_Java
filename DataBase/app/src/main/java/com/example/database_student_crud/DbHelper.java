@@ -75,4 +75,17 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.close();
     }
+
+    public int updateStudent(Student s)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("Name",s.getName());
+        cv.put("Age",s.getAge());
+        cv.put("ImageId",s.getImageId());
+
+        int res = db.update("studentTbl",cv,"Id="+s.getId(),null);
+        return res ;
+    }
 }
