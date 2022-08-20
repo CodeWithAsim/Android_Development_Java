@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                age.onEditorAction(EditorInfo.IME_ACTION_DONE);
+                
                 _name = name.getText().toString();
                 _age = Integer.parseInt(age.getText().toString());
                 _imageId = R.drawable.photo;
@@ -48,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     db.addStudent(s);
                     Toast.makeText(MainActivity.this, "Add Successfully", Toast.LENGTH_SHORT).show();
+                    name.setText("");
+                    age.setText("");
                 }
                 catch(Exception e)
                 {

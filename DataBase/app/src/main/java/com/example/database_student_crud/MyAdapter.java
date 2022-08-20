@@ -1,6 +1,8 @@
 package com.example.database_student_crud;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +19,12 @@ import java.util.List;
 
 public class MyAdapter extends ArrayAdapter<Student> {
 
+    ArrayList<Student> stds ;
+
     public MyAdapter(@NonNull Context context, @NonNull ArrayList<Student> objects) {
         super(context, 0, objects);
+        stds = objects ;
+
     }
 
     @NonNull
@@ -46,11 +52,39 @@ public class MyAdapter extends ArrayAdapter<Student> {
             @Override
             public void onClick(View view) {
                 DbHelper db = new DbHelper(getContext());
-
                 db.deleteStudent(s.getId());
+
+                reloadData();
             }
         });
 
         return convertView;
+    }
+
+    public void reloadData()
+    {
+        DbHelper dbHelper = new DbHelper(getContext());
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor c = db.rawQuery("Select * from studentTbl",null);
+
+        if(c.moveToFirst())
+        {
+            stds.clear();
+            do
+            {
+                int id = c.getInt(0);
+                String name= c.getString(1);
+                int age = c.getInt(2);
+                int image = c.getInt(3);
+
+                Student s = new Student(id,name,age,image);
+                stds.add(s);
+
+            }while(c.moveToNext());
+
+        }
+
+        c.close();
+        notifyDataSetChanged();
     }
 }
