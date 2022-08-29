@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home" android:title="Home" android:icon="@drawable/ic_baseline_home_24"></item>
+        <item android:id="@+id/nav_about" android:title="About" android:icon="@drawable/ic_baseline_info_24"></item>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Fonts">
+            <menu>
+                <group>
+                    <item android:id="@+id/nav_noor" android:title="Noor e Huda" android:icon="@drawable/ic_baseline_menu_book_24"></item>
+                    <item android:id="@+id/nav_jameel" android:title="Jameel Nori" android:icon="@drawable/ic_baseline_font_download_24"></item>
+                </group>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Logout">
+            <menu>
+                <group>
+                    <item android:id="@+id/nav_logout" android:title="Logout" android:icon="@drawable/ic_baseline_login_24"></item>
+                </group>
+            </menu>
+        </item>
+    </group>
+
+</menu>
