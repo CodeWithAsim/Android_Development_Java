@@ -27,7 +27,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
 
     int font_family;
 
-    public RvAdapter(List<SurahInfo> surah_info_list, Context _context, Rv_Interface rv_interface,int font_family) {
+    public RvAdapter(List<SurahInfo> surah_info_list, Context _context, Rv_Interface rv_interface, int font_family) {
         this.surah_info_list = surah_info_list;
         this.context = _context;
         this.rv_interface = rv_interface;
@@ -38,7 +38,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
     @Override
     public MyVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_layout, parent, false);
-        return new MyVH(view,rv_interface);
+        return new MyVH(view, rv_interface);
     }
 
     @Override
@@ -54,11 +54,10 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
 //        holder.surah_into.setText(_SurahInto);
 
         boolean isVisible = surahInfo.isVisiblity();
-        holder.constraintLayout.setVisibility(isVisible?View.VISIBLE:View.GONE);
+        holder.constraintLayout.setVisibility(isVisible ? View.VISIBLE : View.GONE);
 
-        if(holder.getAdapterPosition()>last_position)
-        {
-            Animation animation = AnimationUtils.loadAnimation(context,R.anim.slide_in_onscroll);
+        if (holder.getAdapterPosition() > last_position) {
+            Animation animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_onscroll);
             holder.itemView.startAnimation(animation); // Hum us mai khali pic pe bhi laga skte hai
 
             // instead of that can write the default animations
@@ -66,7 +65,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
             // holder.itemView.startAnimation(animation);
         }
 
-        holder.setData(_SurahNumber, _SurahEnglishName, _SurahUrduName, _AyatCount,_SurahInto);
+        holder.setData(_SurahNumber, _SurahEnglishName, _SurahUrduName, _AyatCount, _SurahInto);
 
         last_position = holder.getAdapterPosition();
 
@@ -88,9 +87,9 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
 
         ConstraintLayout constraintLayout;
 
-        TextView surah_into ;
+        TextView surah_into;
 
-        public MyVH(@NonNull View itemView,Rv_Interface rv_interface) {
+        public MyVH(@NonNull View itemView, Rv_Interface rv_interface) {
             super(itemView);
 
             Surah_number_ = itemView.findViewById(R.id.surah_number);
@@ -102,7 +101,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
 
             constraintLayout = itemView.findViewById(R.id.expandableLayout);
 
-            surah_into=itemView.findViewById(R.id.surahInto);
+            surah_into = itemView.findViewById(R.id.surahInto);
 
             Typeface tf;
 
@@ -137,11 +136,9 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(rv_interface!=null)
-                    {
+                    if (rv_interface != null) {
                         int pos_ = getAdapterPosition();
-                        if(pos_ != RecyclerView.NO_POSITION)
-                        {
+                        if (pos_ != RecyclerView.NO_POSITION) {
                             rv_interface.onItemClick(pos_);
                         }
                     }
@@ -149,7 +146,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyVH> {
             });
         }
 
-        public void setData(String surahNumber, String surahEnglishName, String surahUrduName, String ayatCount,String surahIntro) {
+        public void setData(String surahNumber, String surahEnglishName, String surahUrduName, String ayatCount, String surahIntro) {
 
             Surah_number_.setText(surahNumber);
             SurahEnglishName_.setText(surahEnglishName);

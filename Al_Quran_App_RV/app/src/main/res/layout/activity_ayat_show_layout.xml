@@ -88,7 +88,6 @@
                 android:layout_marginLeft="25dp"
                 android:src="@drawable/ic_baseline_ad_units_24"></ImageView>
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,7 +107,6 @@
                 android:layout_marginTop="235dp"></TextView>
 
             <!--other contents-->
-
 
         </FrameLayout>
 

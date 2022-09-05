@@ -125,7 +125,7 @@ public class MainActivity extends DrawerBaseActivity implements Rv_Interface {
                 } else {
                     extract_EName = c.getString(1);
                 }
-                SurahInfo s_info = new SurahInfo(c.getString(0), extract_EName, c.getString(2), c.getString(3),c.getString(4));
+                SurahInfo s_info = new SurahInfo(c.getString(0), extract_EName, c.getString(2), c.getString(3), c.getString(4));
                 rv_surah_list_info.add(s_info);
             } while (c.moveToNext());
         }
@@ -241,7 +241,7 @@ public class MainActivity extends DrawerBaseActivity implements Rv_Interface {
                 } else {
                     extract_EName = c.getString(1);
                 }
-                SurahInfo s_info = new SurahInfo(c.getString(0), extract_EName, c.getString(2), c.getString(3),c.getString(4));
+                SurahInfo s_info = new SurahInfo(c.getString(0), extract_EName, c.getString(2), c.getString(3), c.getString(4));
 //                surah_info_list.add(s_info);
                 rv_surah_list_info.add(s_info);
             } while (c.moveToNext());
